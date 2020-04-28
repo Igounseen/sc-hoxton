@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import swx.sc.hoxton.bean.BaseUser;
 import swx.sc.hoxton.mapper.UserMapper;
+import swx.sc.hoxton.target.Animal;
 
 
 @Slf4j

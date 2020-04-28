@@ -14,12 +14,6 @@ eureka:
 spring:
   application:
     name: sc-gateway
-  cloud:
-    gateway:
-      routes:
-        - id: sc-user
-          uri: lb://sc-user
-          predicates:
-            - Path=/sc-user/**
+
 
 

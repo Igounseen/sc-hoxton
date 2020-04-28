@@ -4,3 +4,4 @@
 - sc-eureka:10020
 - sc-user: 10100
 - sc-order: 10110
+- sc-network: 10120

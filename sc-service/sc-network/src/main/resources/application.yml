@@ -1,7 +1,7 @@
 server:
-  port: 10100
+  port: 10120
   servlet:
-    context-path: /sc-user
+    context-path: /sc-network
 
 
 eureka:
@@ -11,13 +11,16 @@ eureka:
   instance:
     prefer-ip-address: true
 
+
+# 自定义
 sc:
-  condition: land
+  controller-support: ziyan
+
 
 
 spring:
   application:
-    name: sc-user
+    name: sc-network
   datasource:
     platform: mysql
     driver-class-name: org.h2.Driver
