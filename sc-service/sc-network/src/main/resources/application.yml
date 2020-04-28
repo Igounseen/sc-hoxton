@@ -35,3 +35,27 @@ spring:
       enabled: true
       settings:
         web-allow-others: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      # 生产者重试的次数
+      retries: 0
+      # BufferPool实现ByteBuffer 的复用。每次批量发送消息的大小(16KB)
+      batch-size: 16384
+      # RecordAccumulator 缓存大小 （32MB）
+      buffer-memory: 33554432
+      # 指定消息key和消息体的编解码方式
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # 确认副本数。用来指定分区中必须要有多少个副本收到这条消息，之后生产者才会认为这条消息是成功写入的。
+      acks: 1
+    consumer:
+      # 指定默认消费者group id
+      group-id: network-consumer-group-0
+      auto-commit-interval: 100
+      # 当消费者查找不到所记录的消费位移时,从分区末尾开始消费消息
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      # 指定消息key和消息体的编解码方式
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
